@@ -53,6 +53,13 @@ public class ProductRestController {
 //        return productRepository.save(product);
 //    }
 
+//    @PostMapping("/products")
+//    public Product createProduct(@RequestBody Product product, @RequestHeader("Authorization") String authorizationHeader) {
+//        Coupon coupon = restTemplate.getForObject(couponServiceUrl + product.getCouponCode(), Coupon.class);
+//        product.setPrice(product.getPrice().subtract(coupon.getDiscount()));
+//        return productRepository.save(product);
+//    }
+
     @PostMapping("/products")
     public Product createProduct(@RequestBody Product product, @RequestHeader("Authorization") String authorizationHeader) {
         String encodedCredentials = authorizationHeader.replace("Basic ", "");
